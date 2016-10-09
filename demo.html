@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="lib/template-native.js"></script>
+<script src="lib/jquery-1.7.1.js"></script>
+<script>
+   $(function () {
+       var dataProduct={list: [
+           {one:[
+               {name:'空调',img:'images/home_kt@1x.png'},
+               {name:'取暖器',img:'images/home_qnq@1x.png'},
+               {name:'智能灯',img:'images/home_d@1x.png'},
+               {name:'智能插座',img:'images/home_cz@1x.png'},
+               {name:'智能开关',img:'images/home_kg@1x.png'},
+               {name:'集成吊顶',img:'images/home_jcdd@1x.png'}
+           ]},
+           {two:[
+               {name:'冲奶机',img:'images/home_cnj@1x.png'},
+               {name:'洗衣机',img:'images/home_xyj@1x.png'},
+               {name:'风扇',img:'images/home_fs@1x.png'},
+               {name:'壁炉',img:'images/home_bl@1x.png'},
+               {name:'水暖毯',img:'images/home_snt@1x.png'},
+               {name:'晾衣架',img:'images/home_lyj@1x.png'}
+           ]},
+           {three:[
+               {name:'空调',img:'images/home_kt@1x.png'},
+               {name:'取暖器',img:'images/home_qnq@1x.png'},
+               {name:'智能灯',img:'images/home_d@1x.png'},
+               {name:'智能插座',img:'images/home_cz@1x.png'},
+               {name:'智能开关',img:'images/home_kg@1x.png'},
+               {name:'集成吊顶',img:'images/home_jcdd@1x.png'},
+           ]},
+           {four:[
+               {name:'冲奶机',img:'images/home_cnj@1x.png'},
+               {name:'洗衣机',img:'images/home_xyj@1x.png'},
+               {name:'风扇',img:'images/home_fs@1x.png'},
+               {name:'壁炉',img:'images/home_bl@1x.png'},
+               {name:'水暖毯',img:'images/home_snt@1x.png'},
+               {name:'晾衣架',img:'images/home_lyj@1x.png'}
+           ]},
+           {five:[
+               {name:'空调',img:'images/home_kt@1x.png'},
+               {name:'取暖器',img:'images/home_qnq@1x.png'},
+               {name:'智能灯',img:'images/home_d@1x.png'},
+               {name:'智能插座',img:'images/home_cz@1x.png'},
+               {name:'智能开关',img:'images/home_kg@1x.png'},
+               {name:'集成吊顶',img:'images/home_jcdd@1x.png'},
+           ]},
+           {six:[
+               {name:'冲奶机',img:'images/home_cnj@1x.png'},
+               {name:'洗衣机',img:'images/home_xyj@1x.png'},
+               {name:'风扇',img:'images/home_fs@1x.png'},
+               {name:'壁炉',img:'images/home_bl@1x.png'},
+               {name:'水暖毯',img:'images/home_snt@1x.png'},
+               {name:'晾衣架',img:'images/home_lyj@1x.png'}
+           ]}
+       ]};
+       var slideHtml=template('temp',dataProduct);
+       console.log(slideHtml);
+       $('body').html(slideHtml);
+   })
+</script>
+<script id="temp" type="text/html">
+    <% for(var i=0; i< list.length ;i++ ) { %>
+    <div class="section_3_slide">
+        <% for(var k in list[i]) { %>
+        <a href="#" class="item">
+          <% for( var j=0 ; j< list[i][k].length ; j++){%>
+                <p class="item-name"><%=list[i][k][j].name%></p>
+                <img src="<%= list[i][k][j].img %>" alt="" class="item-img">
+            <% }%>
+        </a>
+        <% }%>
+    </div>
+    <% }%>
+</script>
+</body>
+</html>
